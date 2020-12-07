@@ -15,6 +15,7 @@ int[] indeksi;
 int indeks;
 int rand;
 int rand_odgovor;
+final int pravipocetak = 4; // treba namistit ove indekse
 final int pocetak = 0;
 final int pitanja = 1;
 final int pitanja1 = 2;
@@ -36,6 +37,9 @@ int cekaj;
 int test;
 int n; //dodano
 
+//dodano:
+int menu_width, menu_height;
+
 void setup(){
   size(800, 600);
   pozadina_setup();
@@ -48,11 +52,17 @@ void setup(){
   ponudeni_odgovori = new String[4];
   rand_indeks = new int[4];
   indeks = 0;
-  status = pocetak;
+  //status = pocetak;
+  status = pravipocetak;
   bodovi = 0;
   ne_mijenjaj_indeks = 0;
   pokreni_tajmer = 1;
   cekaj = 0;
+  
+  //veličine prozora - za pravi početak:
+  menu_height = height/8;
+  menu_width = width/3;
+  
   for(int i=0; i<5; i++){ 
     test=1;
     while(test==1) //Ovdje je dodana while i for petlja, da se nijedno od tih pjesama ne ponovi
@@ -79,6 +89,14 @@ void draw(){
   //image(img, 0, 0);
   pozadina_draw();
   switch (status){
+   
+  case pravipocetak: //izbornik
+    noStroke();
+    fill(170, 210, 230, 200);
+    rect(width/2-menu_width/2, height/3-0.5*menu_height, menu_width, menu_height);
+    rect(width/2-menu_width/2, height/3-(0.5-1.2)*menu_height, menu_width, menu_height);
+    rect(width/2-menu_width/2, height/3-(0.5-2.4)*menu_height, menu_width, menu_height);
+    break;
     
   case pocetak:
     
