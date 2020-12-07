@@ -38,8 +38,9 @@ int n; //dodano
 
 void setup(){
   size(800, 600);
+  pozadina_setup();
   font = loadFont("TimesNewRomanPSMT-32.vlw");
-  img = loadImage("slika.jpg");
+  //img = loadImage("slika.jpg");
   odgovori = loadStrings("odgovori.txt");
   song = new ArrayList();
   indeksi = new int [3];
@@ -75,7 +76,8 @@ void setup(){
 }
 
 void draw(){  
-  image(img, 0, 0);
+  //image(img, 0, 0);
+  pozadina_draw();
   switch (status){
     
   case pocetak:
@@ -120,7 +122,8 @@ void draw(){
     textSize(20);
     text(" Igraj ponovo", 120, 325);
     break;
-  }   
+  }  
+  
 }
 
 void mousePressed(){ 
