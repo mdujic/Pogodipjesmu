@@ -6,7 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 Minim minim;
-PImage img;
+//PImage img;
 PFont font;
 
 ArrayList<AudioPlayer> song;
@@ -20,6 +20,7 @@ final int pocetak = 0;
 final int pitanja = 1;
 final int pitanja1 = 2;
 final int kraj = 3;
+final int postavke = 5;
 int status;
 String[] odgovori;
 String[] tocni_odgovori;
@@ -39,6 +40,7 @@ int n; //dodano
 
 //dodano:
 int menu_width, menu_height;
+int choice_width;
 
 void setup(){
   size(800, 600);
@@ -65,6 +67,7 @@ void setup(){
   //veličine prozora - za pravi početak:
   menu_height = height/8;
   menu_width = width/3;
+  choice_width = width/4;
   
   for(int i=0; i<5; i++){ 
     test=1;
@@ -110,16 +113,19 @@ void draw(){
     
   case pocetak:
     noStroke();
-    textFont (font);
-    rect(width/4-menu_width/2, height/2, menu_width, menu_height);
-    rect(width/4-menu_width/2, height/2, menu_width, menu_height);
-    /*text("Izaberi:", 100, 100); 
-    fill(#D3BABA);
-    rect(100, 285, 250, 40);
-    rect(400, 285, 255, 40);
-    fill(#382FC1);
-    text(" Pogodi pjesmu", 125, 315);
-    text(" Pogodi izvođača", 415, 315);  */
+    textFont(font);
+    fill(170, 210, 230, 180);
+    rect(width/3-menu_width/2, height/2, menu_width, menu_height);
+    rect(width/3-menu_width/2+1.1*menu_width, height/2, menu_width, menu_height);
+    fill(#282828);
+    textAlign(CENTER, CENTER);
+    text(" Pjesme!", width/3-0.005*menu_width, height/2 + 0.35*menu_height);
+    text(" Izvođači!", width/3+1.08*menu_width, height/2 + 0.35*menu_height);
+    fill(#282828);
+    ellipse( width/2, height/3, 2*menu_width, 1.5*menu_height);
+    fill(170, 210, 230);
+    textAlign(CENTER);
+    text("Izaberi kategoriju:", width/2, height/3+0.1*menu_height);
     break;
     
   case pitanja: 
