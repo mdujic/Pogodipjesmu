@@ -109,15 +109,17 @@ void draw(){
     break;
     
   case pocetak:
-    
+    noStroke();
     textFont (font);
-    text("Izaberi:", 100, 100); 
+    rect(width/4-menu_width/2, height/2, menu_width, menu_height);
+    rect(width/4-menu_width/2, height/2, menu_width, menu_height);
+    /*text("Izaberi:", 100, 100); 
     fill(#D3BABA);
     rect(100, 285, 250, 40);
     rect(400, 285, 255, 40);
     fill(#382FC1);
     text(" Pogodi pjesmu", 125, 315);
-    text(" Pogodi izvođača", 415, 315);  
+    text(" Pogodi izvođača", 415, 315);  */
     break;
     
   case pitanja: 
@@ -160,6 +162,7 @@ void mousePressed(){
     pokreni_tajmer = 0;    //i onda iako igrač dobro pogodi neće dobiti bodove koje zaslužuje jer je isteklo više vremena
   }                         //nego što stvarno jest u njegovoj igri
   ne_mijenjaj_indeks = 0;
+  
   if(status == pitanja || status == pitanja1){
     if(mouseX<20 || mouseX>620 || mouseY<20 || (mouseY>60 & mouseY<70) || (mouseY>110 & mouseY<120) || 
     (mouseY>160 & mouseY<170) || (mouseY>210 & mouseY<400) || (mouseX>170 & mouseY>400 & mouseY<440) || mouseY>440){
@@ -221,7 +224,14 @@ void mousePressed(){
   gotovo2 = 0; 
   }
   switch(status){
-    
+    case pravipocetak:
+      if ( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-0.5*menu_height ) & ( mouseY < height/3-0.5*menu_height + menu_height ) ) // Kliknuto je "Igraj!"
+        status = pocetak;
+      else if( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-(0.5-1.2)*menu_height ) & ( mouseY < height/3-(0.5-1.2)*menu_height + menu_height ) ) // Kliknuto je "Postavke"
+        println("Postavke");
+      else if( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-(0.5-2.4)*menu_height ) & ( mouseY < height/3-(0.5-2.4)*menu_height + menu_height ) ) // Kliknuto je "Rezultati"
+        println("Rezultati");
+      break;
     case pocetak:
       if(mouseX>100 & mouseX<350 & mouseY>285 & mouseY<315){      
         status=pitanja;      
