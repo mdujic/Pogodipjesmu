@@ -1,7 +1,8 @@
 //PImage sound;
 //PShape krugovi, pravokutnici, nosound;
 //PShape plavi_krug, rozi_krug;
-
+int boja = 1; //plavo = 1, rozo = 0
+int zvuk = 1; // ON = 1, OFF = 0
 
 void postavke_setup() {
   /*
@@ -45,8 +46,16 @@ void postavke_draw() {
     rect(width/4, height/3, width/2, height/7);
     rect(width/4, 2*height/3, width/2, height/7);
     fill(#282828);
-    text("Tema: plavo", width/4+0.7*menu_width, height/3+0.5*menu_height);
-    text("Zvuk: OFF", width/4+0.7*menu_width, 2*height/3+0.5*menu_height);
+    if (boja == 1)
+      text("Tema: plavo", width/4+0.7*menu_width, height/3+0.5*menu_height);
+     else 
+      text("Tema: rozo", width/4+0.7*menu_width, height/3+0.5*menu_height);
+
+    if (zvuk == 1)
+      text("Zvuk: ON", width/4+0.7*menu_width, 2*height/3+0.5*menu_height);
+    else
+      text("Zvuk: OFF", width/4+0.7*menu_width, 2*height/3+0.5*menu_height);
+
     
     
 
