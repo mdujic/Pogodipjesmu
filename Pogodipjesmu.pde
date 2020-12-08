@@ -40,7 +40,6 @@ int n; //dodano
 
 //dodano:
 int menu_width, menu_height;
-int choice_width;
 
 void setup(){
   size(800, 600);
@@ -67,7 +66,6 @@ void setup(){
   //veličine prozora - za pravi početak:
   menu_height = height/8;
   menu_width = width/3;
-  choice_width = width/4;
   
   for(int i=0; i<5; i++){ 
     test=1;
@@ -234,15 +232,15 @@ void mousePressed(){
       if ( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-0.5*menu_height ) & ( mouseY < height/3-0.5*menu_height + menu_height ) ) // Kliknuto je "Igraj!"
         status = pocetak;
       else if( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-(0.5-1.2)*menu_height ) & ( mouseY < height/3-(0.5-1.2)*menu_height + menu_height ) ) // Kliknuto je "Postavke"
-        println("Postavke");
+        status = postavke;
       else if( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-(0.5-2.4)*menu_height ) & ( mouseY < height/3-(0.5-2.4)*menu_height + menu_height ) ) // Kliknuto je "Rezultati"
         println("Rezultati");
       break;
     case pocetak:
-      if(mouseX>100 & mouseX<350 & mouseY>285 & mouseY<315){      
+      if( ( mouseX > width/3-menu_width/2 ) & ( mouseX < width/3-menu_width/2 + menu_width ) & ( mouseY > height/2 ) & ( mouseY < height/2 + menu_height ) ){      
         status=pitanja;      
       }      
-      else if(mouseX>400 & mouseX<655 & mouseY>285 & mouseY<315){           
+      else if( ( mouseX > width/3-menu_width/2+1.1*menu_width ) & ( mouseX < width/3-menu_width/2+1.1*menu_width + menu_width ) & ( mouseY > height/2 ) & ( mouseY < height/2 + menu_height)){           
         status=pitanja1;      
       }
       break;
