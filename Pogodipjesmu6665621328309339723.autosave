@@ -21,6 +21,7 @@ final int pitanja = 1;
 final int pitanja1 = 2;
 final int kraj = 3;
 final int postavke = 5;
+
 int status;
 String[] odgovori;
 String[] tocni_odgovori;
@@ -44,11 +45,9 @@ int menu_width, menu_height;
 void setup(){
   size(800, 600);
   pozadina_setup();
-  postavke_setup();
   
   //font = loadFont("TimesNewRomanPSMT-32.vlw");  
   font = createFont("FascinateInline-Regular.ttf", 40);
-  
   //img = loadImage("slika.jpg");
   odgovori = loadStrings("odgovori.txt");
   song = new ArrayList();
@@ -92,7 +91,9 @@ void setup(){
 
 void draw(){  
   //image(img, 0, 0);
+  
   pozadina_draw();
+  //image(img, 0, 0);
   switch (status){
    
   case pravipocetak: //izbornik
@@ -110,25 +111,18 @@ void draw(){
     text(" Rezultati".toUpperCase(), width/2, height/3+2.3*menu_height);
     break;
     
-  case pocetak: // igraj!
+  case pocetak:
     noStroke();
-    textFont(font);
-    fill(170, 210, 230, 180);
-    rect(width/3-menu_width/2, height/2, menu_width, menu_height);
-    rect(width/3-menu_width/2+1.1*menu_width, height/2, menu_width, menu_height);
-    fill(#282828);
-    textAlign(CENTER, CENTER);
-    text(" Pjesme!", width/3-0.005*menu_width, height/2 + 0.35*menu_height);
-    text(" Izvođači!", width/3+1.08*menu_width, height/2 + 0.35*menu_height);
-    fill(#282828);
-    ellipse( width/2, height/3, 2*menu_width, 1.5*menu_height);
-    fill(170, 210, 230);
-    textAlign(CENTER);
-    text("Izaberi kategoriju:", width/2, height/3+0.1*menu_height);
-    break;
-    
-  case postavke:
-    postavke_draw();
+    textFont (font);
+    rect(width/4-menu_width/2, height/2, menu_width, menu_height);
+    rect(width/4-menu_width/2, height/2, menu_width, menu_height);
+    /*text("Izaberi:", 100, 100); 
+    fill(#D3BABA);
+    rect(100, 285, 250, 40);
+    rect(400, 285, 255, 40);
+    fill(#382FC1);
+    text(" Pogodi pjesmu", 125, 315);
+    text(" Pogodi izvođača", 415, 315);  */
     break;
     
   case pitanja: 
@@ -237,15 +231,15 @@ void mousePressed(){
       if ( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-0.5*menu_height ) & ( mouseY < height/3-0.5*menu_height + menu_height ) ) // Kliknuto je "Igraj!"
         status = pocetak;
       else if( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-(0.5-1.2)*menu_height ) & ( mouseY < height/3-(0.5-1.2)*menu_height + menu_height ) ) // Kliknuto je "Postavke"
-        status = postavke;
+        println("Postavke");
       else if( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-(0.5-2.4)*menu_height ) & ( mouseY < height/3-(0.5-2.4)*menu_height + menu_height ) ) // Kliknuto je "Rezultati"
         println("Rezultati");
       break;
     case pocetak:
-      if( ( mouseX > width/3-menu_width/2 ) & ( mouseX < width/3-menu_width/2 + menu_width ) & ( mouseY > height/2 ) & ( mouseY < height/2 + menu_height ) ){      
+      if(mouseX>100 & mouseX<350 & mouseY>285 & mouseY<315){      
         status=pitanja;      
       }      
-      else if( ( mouseX > width/3-menu_width/2+1.1*menu_width ) & ( mouseX < width/3-menu_width/2+1.1*menu_width + menu_width ) & ( mouseY > height/2 ) & ( mouseY < height/2 + menu_height)){           
+      else if(mouseX>400 & mouseX<655 & mouseY>285 & mouseY<315){           
         status=pitanja1;      
       }
       break;
