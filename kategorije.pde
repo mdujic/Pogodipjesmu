@@ -1,7 +1,7 @@
 void kategorije_draw()
 {
-  noStroke();
-  fill(170, 210, 230, 180);
+    noStroke();
+    fill(170, 210, 230, 180);
     rect(width/3-menu_width/2, height/2, menu_width, menu_height);
     rect(width/3-menu_width/2+1.1*menu_width, height/2, menu_width, menu_height);
     fill(#282828);
