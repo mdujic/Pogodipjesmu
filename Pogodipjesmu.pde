@@ -30,7 +30,7 @@ String[] ponudeni_odgovori;
 int[] rand_indeks;
 int izabrao_indekse;
 int bodovi;
-String odvojeno;
+//String odvojeno;
 int ne_mijenjaj_indeks;
 int m;
 int pokreni_tajmer;
@@ -291,6 +291,7 @@ void custom_delay(int delay)
 }
 
 void generiraj_odgovore(int i){
+  pitanja_setup();
   pitanja_draw();
     
     if(ne_mijenjaj_indeks == 0){      
@@ -350,14 +351,6 @@ void generiraj_odgovore(int i){
     nacrtaj_odgovore(i);
 }
 
-void nacrtaj_odgovore(int i){
-  for(int j=0; j<4; j++){      
-    odvojeno = ponudeni_odgovori[j];
-    String[] lista_odvojenog = split(odvojeno, "-");
-    if(i == 0) text(" "+lista_odvojenog[1], 20, 45 + (rand_indeks[j]-1)*50);
-    else text(" "+lista_odvojenog[0], 20, 45 + (rand_indeks[j]-1)*50);    
-    }     
-}
 
 
 
