@@ -17,7 +17,7 @@ void pozadina_setup() {
   //noLoop();
   noStroke();
   //mouseX = 10;
-  frameRate(10);
+  frameRate(5);
 }
 
 void pozadina_draw() {
