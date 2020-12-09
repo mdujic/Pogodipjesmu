@@ -3,6 +3,7 @@
 //PShape plavi_krug, rozi_krug;
 int boja = 1; //plavo = 1, rozo = 0
 int zvuk = 1; // ON = 1, OFF = 0
+color pravokutnik_pozadina = color(170, 210, 230, 180); //defaultna je plava
 
 void postavke_setup() {
   /*
@@ -42,15 +43,21 @@ void postavke_draw() {
     //shape(nosound, 2*width/3, 2*height/3, 100, 100);
    */
    //fill();
-    fill(170, 210, 230, 180);
+    
+    fill(pravokutnik_pozadina);
     rect(width/4, height/3, width/2, height/7);
     rect(width/4, 2*height/3, width/2, height/7);
     fill(#282828);
-    if (boja == 1)
+    
+    if (boja == 1) {
+      
       text("Tema: plavo", width/4+0.7*menu_width, height/3+0.5*menu_height);
-     else 
+      
+    }
+     else {
+      
       text("Tema: rozo", width/4+0.7*menu_width, height/3+0.5*menu_height);
-
+     }
     if (zvuk == 1)
       text("Zvuk: ON", width/4+0.7*menu_width, 2*height/3+0.5*menu_height);
     else
@@ -58,9 +65,17 @@ void postavke_draw() {
 
     
     
-
 }
 
 void postavke_mousePressed(){   
-  
+  if(mouseX>=width/4 & mouseX<=(width/4+width/2) & mouseY>=height/3 & mouseY<=(height/3+height/7)) {
+    if(boja == 1){
+      pravokutnik_pozadina = color(230, 180, 170, 180);
+      boja = 0;
+    }
+    else {
+      pravokutnik_pozadina = color(170, 210, 230, 180);
+      boja = 1;
+    }
+  }
 }

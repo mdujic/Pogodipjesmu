@@ -11,7 +11,22 @@ color[] colArray = {
   
 };
 
+color[] colArrayRozo = { 
+  color(210, 100, 100),
+  color(210, 150, 120),
+  color(210, 100, 120),
+  color(230, 200, 170),
+  color(245, 225, 205),
+  color(250, 240, 220)
+  
+};
+
+
+
+
 void pozadina_setup() {
+  
+  
   //size(800, 600);
   //surface.setLocation(800, 70);
   //noLoop();
@@ -39,7 +54,10 @@ void pozadina_draw() {
      colArrayCounter++;
      if(colArrayCounter > 5) colArrayCounter = 0;
      float random = random(6);
-     fill(colArray[(int)random]);
+     if (boja == 1)
+       fill(colArray[(int)random]);
+     else
+       fill(colArrayRozo[(int)random]);
      //fill(colArray[colArrayCounter]);
      //fill(colArray[int(random(6))]);
       pushMatrix();

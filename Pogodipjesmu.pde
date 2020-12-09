@@ -41,10 +41,14 @@ int n; //dodano
 //dodano:
 int menu_width, menu_height;
 
+
+
+
 void setup(){
   size(800, 600);
   pozadina_setup();
   postavke_setup();
+  
   
   //font = loadFont("TimesNewRomanPSMT-32.vlw");  
   font = createFont("FascinateInline-Regular.ttf", 40);
@@ -143,6 +147,9 @@ void draw(){
 }
 
 void mousePressed(){ 
+  
+  if(status == postavke)
+    postavke_mousePressed();
   if(pokreni_tajmer == 1){   
     m = millis()-n;        //Treba ovako jer inače nakon odabira da se ponovno igra, nastavlja teći vrijeme od prve igre 
     pokreni_tajmer = 0;    //i onda iako igrač dobro pogodi neće dobiti bodove koje zaslužuje jer je isteklo više vremena
