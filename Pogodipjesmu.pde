@@ -216,26 +216,6 @@ void mousePressed(){
   }   
 }
 
-void zacrveni() //Dodano da se igrač lakše snađe što je krivo stisnuo
-{
-  if(mouseX>=20 & mouseX<=620 & mouseY>=20 & mouseY<=60){
-        fill(#D6331A);
-        rect(20, 20, 600, 40);        
-      }
-  if(mouseX>=20 & mouseX<=620 & mouseY>=70 & mouseY<=110){
-        fill(#D6331A);
-        rect(20, 70, 600, 40);       
-      }
-  if(mouseX>=20 & mouseX<=620 & mouseY>=120 & mouseY<=160){
-        fill(#D6331A);
-        rect(20, 120, 600, 40);        
-      }
-  if(mouseX>=20 & mouseX<=620 & mouseY>=170 & mouseY<=210){
-        fill(#D6331A);
-        rect(20, 170, 600, 40);        
-      }
-}
-
 void precrtaj(){
   fill(#382FC1);
   if(status == pitanja) nacrtaj_odgovore(0);

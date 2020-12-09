@@ -3,6 +3,7 @@ PFont font2;
 
 float x1, x2, x3, x4;
 float y1, y2, y3, y4;
+float a, b;
 
 void pitanja_setup(){
   font2 = createFont("BubblegumSans-Regular.ttf", 40);
@@ -19,6 +20,8 @@ void pitanja_setup(){
   x4 = width/4-1.3*menu_width/2+1.1*1.3*menu_width;
   y4 = height/3+1.2*menu_height;
   
+  a = width/2-1.3*menu_width/2;
+  b = 0.7*height;
   
 }
 
@@ -44,7 +47,7 @@ void pitanja_draw()
     rect(x4, y4, 1.3*menu_width, menu_height);  // 4
     
     fill(170, 210, 230);
-    rect(width/2-1.3*menu_width/2, 0.7*height, 1.3*menu_width, menu_height);
+    rect(a, b, 1.3*menu_width, menu_height);
     fill(#282828);
     textAlign(CENTER, CENTER);
     text("Pusti ponovno!", width/2, 0.75*height);
@@ -96,15 +99,10 @@ void nacrtaj_odgovore(int i){
 
 void pitanja_if(){
   if(status == pitanja || status == pitanja1){
-    if ( mouseX < x1 || mouseX > x2 + 1.3*menu_width || mouseY < y1 || mouseY > y3 + menu_height )
-    println("vanka");
-    /*if( mouseX < 20 || mouseX>620 || mouseY<20 || (mouseY>60 & mouseY<70) || (mouseY>110 & mouseY<120) || 
-    (mouseY>160 & mouseY<170) || (mouseY>210 & mouseY<400) || (mouseX>170 & mouseY>400 & mouseY<440) || mouseY>440){
-      ne_mijenjaj_indeks = 1;      
-    }*/
-    
-    
-    if(mouseX>=20 & mouseX<=170 & mouseY>=400 & mouseY<=440){
+    if (  mouseX < x1 || mouseX > x2 + 1.3*menu_width || mouseY < y1 || mouseY > y3 + menu_height ||
+         ( mouseX > x1 + 1.3*menu_width  & mouseX < x2) || ( mouseY > y1 + menu_height & mouseY < y3 )  ) 
+    ne_mijenjaj_indeks = 1;
+    if( mouseX >= a & mouseX <= a + 1.3*menu_width & mouseY >= b & mouseY <= b + menu_height){
       ne_mijenjaj_indeks = 1;
       if(ponovljena_pjesma != null) ponovljena_pjesma.close();
       minim = new Minim(this);
@@ -165,6 +163,25 @@ void pitanja_if(){
   }
 }
 
+void zacrveni() //Dodano da se igrač lakše snađe što je krivo stisnuo
+{
+  if( mouseX >= x1 & mouseX <= x1 + 1.3*menu_width & mouseY >= y1 & mouseY <= y1 + menu_height ){
+        fill(#D6331A);
+        rect(x1, y1, 1.3*menu_width, menu_height);   
+      }
+  if( mouseX >= x2 & mouseX <= x2 + 1.3*menu_width & mouseY >= y2 & mouseY <= y2 + menu_height ){
+        fill(#D6331A);
+        rect(x2, y2, 1.3*menu_width, menu_height);   
+      }
+  if( mouseX >= x3 & mouseX <= x3 + 1.3*menu_width & mouseY >= y3 & mouseY <= y3 + menu_height ){
+        fill(#D6331A);
+        rect(x3, y3, 1.3*menu_width, menu_height);     
+      }
+  if( mouseX >= x4 & mouseX <= x4 + 1.3*menu_width & mouseY >= x4 & mouseY <= x4 + menu_height ){
+        fill(#D6331A);
+        rect(x4, y4, 1.3*menu_width, menu_height);     
+      }
+}
 
 /*
 
