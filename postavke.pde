@@ -4,6 +4,7 @@
 int boja = 1; //plavo = 1, rozo = 0
 int zvuk = 1; // ON = 1, OFF = 0
 color pravokutnik_pozadina = color(170, 210, 230, 180); //defaultna je plava
+AudioPlayer pozadinska_pjesma;
 
 void postavke_setup() {
   /*
@@ -17,6 +18,14 @@ void postavke_setup() {
     imageMode(CENTER);
     */
     
+    minim = new Minim(this);
+    pozadinska_pjesma = minim.loadFile("pjesme/Ariana Grande - Dangerous Woman.mp3");
+    pozadinska_pjesma.play();
+    if (pozadinska_pjesma.position() == pozadinska_pjesma.length()  && zvuk == 1)
+    {
+      pozadinska_pjesma.rewind();
+      pozadinska_pjesma.play();
+    }
 
 }
 
@@ -68,6 +77,7 @@ void postavke_draw() {
 }
 
 void postavke_mousePressed(){   
+  
   if(mouseX>=width/4 & mouseX<=(width/4+width/2) & mouseY>=height/3 & mouseY<=(height/3+height/7)) {
     if(boja == 1){
       pravokutnik_pozadina = color(230, 180, 170, 180);
@@ -78,4 +88,17 @@ void postavke_mousePressed(){
       boja = 1;
     }
   }
+  
+  
+  if(mouseX>=width/4 & mouseX<=(width/4+width/2) & mouseY>=2*height/3 & mouseY<=(2*height/3+height/7)) {
+    if(zvuk == 1){
+      pozadinska_pjesma.pause();
+      zvuk = 0;
+    }
+    else {
+      pozadinska_pjesma.play();
+      zvuk = 1;
+    }
+  }
+  
 }
