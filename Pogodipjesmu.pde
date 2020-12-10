@@ -216,13 +216,6 @@ void mousePressed(){
   }   
 }
 
-void precrtaj(){
-  fill(#382FC1);
-  if(status == pitanja) nacrtaj_odgovore(0);
-  else nacrtaj_odgovore(1);
-  cekaj = 1;
-}
-
 void custom_delay(int delay)
 {
   int time = millis();

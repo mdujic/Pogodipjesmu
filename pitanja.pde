@@ -130,7 +130,7 @@ void pitanja_if(){
       }   
       zacrveni(); //dodano
       fill(#1AD631);
-      rect(20, 20, 600, 40);
+      rect(x1, y1, 1.3*menu_width, menu_height); 
       precrtaj();      
     }
     if(rand_indeks[0]==2 & ne_mijenjaj_indeks == 0){
@@ -139,7 +139,7 @@ void pitanja_if(){
       }
       zacrveni(); //dodano
       fill(#1AD631);
-      rect(20, 70, 600, 40);
+      rect(x2, y2, 1.3*menu_width, menu_height); 
       precrtaj();      
     }
     if(rand_indeks[0]==3 & ne_mijenjaj_indeks == 0){
@@ -148,7 +148,7 @@ void pitanja_if(){
       }
       zacrveni(); //dodano
       fill(#1AD631);
-      rect(20, 120, 600, 40);
+      rect(x3, y3, 1.3*menu_width, menu_height); 
       precrtaj();      
     }
     if(rand_indeks[0]==4 & ne_mijenjaj_indeks == 0){
@@ -157,7 +157,7 @@ void pitanja_if(){
       }
       zacrveni(); //dodano
       fill(#1AD631);
-      rect(20, 170, 600, 40);
+      rect(x4, y4, 1.3*menu_width, menu_height); 
       precrtaj();      
     }    
   }
@@ -183,59 +183,9 @@ void zacrveni() //Dodano da se igrač lakše snađe što je krivo stisnuo
       }
 }
 
-/*
-
-void pitanja_if(){
-  if(status == pitanja || status == pitanja1){
-    if(mouseX<20 || mouseX>620 || mouseY<20 || (mouseY>60 & mouseY<70) || (mouseY>110 & mouseY<120) || 
-    (mouseY>160 & mouseY<170) || (mouseY>210 & mouseY<400) || (mouseX>170 & mouseY>400 & mouseY<440) || mouseY>440){
-      ne_mijenjaj_indeks = 1;      
-    }
-    if(mouseX>=20 & mouseX<=170 & mouseY>=400 & mouseY<=440){
-      ne_mijenjaj_indeks = 1;
-      if(ponovljena_pjesma != null) ponovljena_pjesma.close();
-      minim = new Minim(this);
-      ponovljena_pjesma = minim.loadFile("pjesme/" + tocni_odgovori[indeks] + ".mp3"); //Ispravljeno, sitnica je nedostajala, ovaj string "pjesme/"
-      song.get(indeks).close();
-      ponovljena_pjesma.play();
-    }    
-
-    if(rand_indeks[0]==1 & ne_mijenjaj_indeks == 0){
-      if(mouseX>=width/4-1.3*menu_width/2 & mouseX<=620 & mouseY>=20 & mouseY<=60){
-        bodovi = bodovi + 15;        
-      }   
-      zacrveni(); //dodano
-      fill(#1AD631);
-      rect(20, 20, 600, 40);
-      precrtaj();      
-    }
-    if(rand_indeks[0]==2 & ne_mijenjaj_indeks == 0){
-      if(mouseX>=20 & mouseX<=620 & mouseY>=70 & mouseY<=110){
-        bodovi = bodovi + 15;        
-      }
-      zacrveni(); //dodano
-      fill(#1AD631);
-      rect(20, 70, 600, 40);
-      precrtaj();      
-    }
-    if(rand_indeks[0]==3 & ne_mijenjaj_indeks == 0){
-      if(mouseX>=20 & mouseX<=620 & mouseY>=120 & mouseY<=160){
-        bodovi = bodovi + 15;        
-      }
-      zacrveni(); //dodano
-      fill(#1AD631);
-      rect(20, 120, 600, 40);
-      precrtaj();      
-    }
-    if(rand_indeks[0]==4 & ne_mijenjaj_indeks == 0){
-      if(mouseX>=20 & mouseX<=620 & mouseY>=170 & mouseY<=210){
-        bodovi = bodovi + 15;        
-      }
-      zacrveni(); //dodano
-      fill(#1AD631);
-      rect(20, 170, 600, 40);
-      precrtaj();      
-    }    
-  }
+void precrtaj(){
+  //fill(#382FC1);
+  if(status == pitanja) nacrtaj_odgovore(0);
+  else nacrtaj_odgovore(1);
+  cekaj = 1;
 }
-*/
