@@ -27,14 +27,12 @@ void back_mousePressed() {
      exit();
    else if (mouseX >= width-0.7*menu_width-1.3*menu_height & mouseX <= width-0.7*menu_width-1.3*menu_height + 0.7*menu_width && mouseY <= menu_height) {
      status = izbornik;
-     //if (status == pjesme || status == izvodaci)
-     //{
-       //if ()song.get(indeks).pause();
-       //song.get(indeks).close();
-       //ponovljena_pjesma.pause();
-       //ponovljena_pjesma.close();
-       //minim.stop();
-     //}
+     
+     song.get(indeks).pause();
+     song.get(indeks).close();
+     ponovljena_pjesma.pause();
+     ponovljena_pjesma.close();
+      
      setup();
 
        
