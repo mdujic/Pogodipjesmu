@@ -23,6 +23,7 @@ final int pjesme = 2;
 final int izvodaci = 3;
 final int kraj = 4;
 final int postavke = 5;
+final int rezultati = 6;
 
 int status;
 String[] odgovori;
@@ -138,7 +139,11 @@ void draw(){
     custom_delay(1200);
     kraj_draw();
     break;
-  }  
+    
+  case rezultati:
+    rezultati_draw();
+    break;
+  }
   
   back_draw();
 }
@@ -176,7 +181,7 @@ void mousePressed(){
       else if( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-(0.5-1.2)*menu_height ) & ( mouseY < height/3-(0.5-1.2)*menu_height + menu_height ) ) // Kliknuto je "Postavke"
         status = postavke;
       else if( ( mouseX > width/2-menu_width/2 ) & ( mouseX < width/2-menu_width/2 + menu_width ) & ( mouseY > height/3-(0.5-2.4)*menu_height ) & ( mouseY < height/3-(0.5-2.4)*menu_height + menu_height ) ) // Kliknuto je "Rezultati"
-        println("Rezultati");
+        status = rezultati;
       break;
     case pocetak:
       if( ( mouseX > width/3-menu_width/2 ) & ( mouseX < width/3-menu_width/2 + menu_width ) & ( mouseY > height/2 ) & ( mouseY < height/2 + menu_height ) ){      

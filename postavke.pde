@@ -38,7 +38,7 @@ void postavke_draw() {
     
     fill(pravokutnik_pozadina, 180);
     rect(width/2-menu_width/2, height/3-0.5*menu_height, menu_width, menu_height);
-    rect(width/2-menu_width/2, height/3-(0.5-2.4)*menu_height, menu_width, menu_height);
+    rect(width/2-menu_width/2, height/3-(0.5-1.4)*menu_height, menu_width, menu_height);
     fill(boja_teksta);
     
     if (boja == 1) {
@@ -51,12 +51,9 @@ void postavke_draw() {
       text("Tema: rozo", width/2, height/3-0.07*menu_height);
      }
     if (zvuk == 1)
-      text("Zvuk: ON",width/2, height/3+2.3*menu_height);
+      text("Zvuk: ON",width/2, height/3+1.3*menu_height);
     else
-      text("Zvuk: OFF", width/2, height/3+2.3*menu_height);
-
-    
-    
+      text("Zvuk: OFF", width/2, height/3+1.3*menu_height);
 }
 
 void postavke_mousePressed(){   
