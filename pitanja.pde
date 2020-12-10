@@ -1,13 +1,10 @@
 String odvojeno;
-PFont font2;
 
 float x1, x2, x3, x4;
 float y1, y2, y3, y4;
 float a, b;
 
-void pitanja_setup(){
-  font2 = createFont("BubblegumSans-Regular.ttf", fontSizeSmall);
-  
+void pitanja_setup(){  
   x1 = width/4-1.3*menu_width/2;
   y1 = height/3;
   
@@ -48,13 +45,9 @@ void pitanja_draw()
     
     fill(pravokutnik_pozadina);
     rect(a, b, 1.3*menu_width, menu_height);
-    fill(#282828);
+    fill(boja_teksta);
     textAlign(CENTER, CENTER);
     text("Pusti ponovno!", width/2, 0.75*height);
-    /*fill(#282828);
-    text(" Pjesme!", width/3-0.005*menu_width, height/2 + 0.35*menu_height);
-    text(" Izvođači!", width/3+1.08*menu_width, height/2 + 0.35*menu_height);
-    */
 }
 
 void nacrtaj_odgovore(int i){
@@ -67,12 +60,10 @@ void nacrtaj_odgovore(int i){
     }     
   */
     
-    fill(#282828);
-    textAlign(CENTER, CENTER);
-    //textSize(fontSizeSmall);     
+    fill(boja_teksta);
+    textAlign(CENTER, CENTER); 
     textFont(font2);
     
-
   for(int j=0; j<4; j++){                                                                                   // 1 2
         odvojeno = ponudeni_odgovori[j];                                                                    // 3 4  
         String[] lista_odvojenog = split(odvojeno, "-");
@@ -98,7 +89,7 @@ void nacrtaj_odgovore(int i){
 }
 
 void pitanja_if(){
-  if(status == pitanja || status == pitanja1){
+  if(status == pjesme || status == izvodaci){
     if (  mouseX < x1 || mouseX > x2 + 1.3*menu_width || mouseY < y1 || mouseY > y3 + menu_height ||
          ( mouseX > x1 + 1.3*menu_width  & mouseX < x2) || ( mouseY > y1 + menu_height & mouseY < y3 )  ) 
     ne_mijenjaj_indeks = 1;
@@ -111,25 +102,12 @@ void pitanja_if(){
       ponovljena_pjesma.play();
     }    
     
-    /*
-    rect(20, 20, 600, 40);
-    rect(20, 70, 600, 40);
-    rect(20, 120, 600, 40);
-    rect(20, 170, 600, 40);
-    */
-    
-    /*
-    rect(width/4-1.3*menu_width/2, height/3, 1.3*menu_width, menu_height);                                     // 1
-    rect(width/4-1.3*menu_width/2+1.1*1.3*menu_width, height/3, 1.3*menu_width, menu_height);                  // 2
-    rect(width/4-1.3*menu_width/2, height/3+1.2*menu_height, 1.3*menu_width, menu_height);                     // 3
-    rect(width/4-1.3*menu_width/2+1.1*1.3*menu_width, height/3+1.2*menu_height, 1.3*menu_width, menu_height);  // 4
-    */
     if(rand_indeks[0]==1 & ne_mijenjaj_indeks == 0){
       if( ( mouseX >=x1 ) & ( mouseX <= x1 + 1.3*menu_width ) & ( mouseY >= y1 ) & ( mouseY <= y1 + menu_height ) ){
         bodovi = bodovi + 15;        
       }   
       zacrveni(); //dodano
-      fill(#1AD631);
+      fill(tocan_odgovor);
       rect(x1, y1, 1.3*menu_width, menu_height); 
       precrtaj();      
     }
@@ -138,7 +116,7 @@ void pitanja_if(){
         bodovi = bodovi + 15;        
       }
       zacrveni(); //dodano
-      fill(#1AD631);
+      fill(tocan_odgovor);
       rect(x2, y2, 1.3*menu_width, menu_height); 
       precrtaj();      
     }
@@ -147,7 +125,7 @@ void pitanja_if(){
         bodovi = bodovi + 15;        
       }
       zacrveni(); //dodano
-      fill(#1AD631);
+      fill(tocan_odgovor);
       rect(x3, y3, 1.3*menu_width, menu_height); 
       precrtaj();      
     }
@@ -156,7 +134,7 @@ void pitanja_if(){
         bodovi = bodovi + 15;        
       }
       zacrveni(); //dodano
-      fill(#1AD631);
+      fill(tocan_odgovor);
       rect(x4, y4, 1.3*menu_width, menu_height); 
       precrtaj();      
     }    
@@ -166,26 +144,26 @@ void pitanja_if(){
 void zacrveni() //Dodano da se igrač lakše snađe što je krivo stisnuo
 {
   if( mouseX >= x1 & mouseX <= x1 + 1.3*menu_width & mouseY >= y1 & mouseY <= y1 + menu_height ){
-        fill(#D6331A);
+        fill(netocan_odgovor);
         rect(x1, y1, 1.3*menu_width, menu_height);   
       }
   if( mouseX >= x2 & mouseX <= x2 + 1.3*menu_width & mouseY >= y2 & mouseY <= y2 + menu_height ){
-        fill(#D6331A);
+        fill(netocan_odgovor);
         rect(x2, y2, 1.3*menu_width, menu_height);   
       }
   if( mouseX >= x3 & mouseX <= x3 + 1.3*menu_width & mouseY >= y3 & mouseY <= y3 + menu_height ){
-        fill(#D6331A);
+        fill(netocan_odgovor);
         rect(x3, y3, 1.3*menu_width, menu_height);     
       }
-  if( mouseX >= x4 & mouseX <= x4 + 1.3*menu_width & mouseY >= x4 & mouseY <= x4 + menu_height ){
-        fill(#D6331A);
+  if( mouseX >= x4 & mouseX <= x4 + 1.3*menu_width & mouseY >= y4 & mouseY <= y4 + menu_height ){
+        fill(netocan_odgovor);
         rect(x4, y4, 1.3*menu_width, menu_height);     
       }
 }
 
 void precrtaj(){
   //fill(#382FC1);
-  if(status == pitanja) nacrtaj_odgovore(0);
+  if(status == pjesme) nacrtaj_odgovore(0);
   else nacrtaj_odgovore(1);
   cekaj = 1;
 }

@@ -36,7 +36,7 @@ void pozadina_setup() {
 }
 
 void pozadina_draw() {
-  background(#282828);
+  background(boja_teksta);
  //translate(width/2, height/2);
  float rStep = 30;
  float rMax = 1920;

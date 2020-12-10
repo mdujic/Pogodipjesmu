@@ -1,8 +1,8 @@
 void kraj_draw()
 {
-    fill(#282828,180);
+    fill(boja_teksta,180);
     rect(width/2-1.8*menu_width/2, height/3, 1.8*menu_width, 2*menu_height);
-    fill(#282828);
+    fill(boja_teksta);
     ellipse( width/2, height/3, 2*menu_width, 1.5*menu_height);
     fill(pravokutnik_pozadina);
     textAlign(CENTER, CENTER);
@@ -13,7 +13,7 @@ void kraj_draw()
     
     fill(pravokutnik_pozadina, 180);    
     rect(width/2-menu_width/2, 0.65*height, menu_width, menu_height);
-    fill(#282828);
+    fill(boja_teksta);
     textSize(fontSizeSmall);    
     text(" Igraj ponovo", width/2, 0.7*height);
 }

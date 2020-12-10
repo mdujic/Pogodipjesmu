@@ -7,7 +7,7 @@ void izbornik_draw(){
     rect(width/2-menu_width/2, height/3-0.5*menu_height, menu_width, menu_height);
     rect(width/2-menu_width/2, height/3-(0.5-1.2)*menu_height, menu_width, menu_height);
     rect(width/2-menu_width/2, height/3-(0.5-2.4)*menu_height, menu_width, menu_height);
-    fill(#282828);
+    fill(boja_teksta);
     textAlign(CENTER, CENTER);
     text(" Igraj!".toUpperCase(), width/2, height/3-0.07*menu_height);
     text(" Postavke".toUpperCase(), width/2, height/3+1.1*menu_height);

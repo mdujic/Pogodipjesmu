@@ -8,10 +8,10 @@ void back_setup()  {
 
 void back_draw() {
   
-  if (status != 4) {
+  if (status != izbornik) {
     fill(pravokutnik_pozadina, 180);
     rect(width-menu_width, 0, menu_width, menu_height);
-    fill(#282828);
+    fill(boja_teksta);
     textFont(font);
     text("Povratak", width-0.5*menu_width, 0.5*menu_height);
     
@@ -21,9 +21,10 @@ void back_draw() {
 
 void back_mousePressed() {
    if (mouseX >= width-menu_width && mouseX <= width && mouseY <= menu_height) {
-     status = 4;
+     status = izbornik;
      //if(ponovljena_pjesma != null) ponovljena_pjesma.close();
-     if (status != 5)
+     //if (status != postavke)
+     pozadinska_pjesma.rewind();
        setup();
    }
 }
