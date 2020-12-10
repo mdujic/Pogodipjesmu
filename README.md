@@ -1,7 +1,7 @@
 # Pogodi pjesmu
 MMS 2020, izmjena projekta
 
-Potrebno je instalirati biblioteku Minim u Processingu.\\
+Potrebno je instalirati biblioteku Minim u Processingu.\newline
 Pokretanje: upaliti Pogodipjesmu.pde
 
 Za iduće faze poboljšanja predlažemo:
