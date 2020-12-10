@@ -1,8 +1,8 @@
 # Pogodi pjesmu
 MMS 2020, izmjena projekta
 
-Potrebno je instalirati biblioteku Minim u Processingu.
-Za pokretanje: upaliti Pogodipjesmu.pde
+Potrebno je instalirati biblioteku Minim u Processingu.\\
+Pokretanje: upaliti Pogodipjesmu.pde
 
 Za iduće faze poboljšanja predlažemo:
 - dodati mogućnost da igrač upiše svoje ime te da se pamti nekoliko najboljih rezultata koji se mogu vidjeti na rang listi
