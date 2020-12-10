@@ -185,7 +185,9 @@ void mousePressed(){
       if(ne_mijenjaj_indeks == 0){ 
         indeks++;         
       }     
-      if(indeks == 5) status = kraj;
+      if(indeks == 5) { 
+        status = kraj;
+        if( zvuk == 1) pozadinska_pjesma.play(); }
       break;
       
     case kraj:
