@@ -53,7 +53,7 @@ void postavke_mousePressed(){
   }
   
   
-  if(mouseX>=width/4 & mouseX<=(width/4+width/2) & mouseY>=2*height/3 & mouseY<=(2*height/3+height/7)) {
+  if(mouseX>=width/2-menu_width/2 & mouseX<=width/2-menu_width/2+menu_width & mouseY>=height/3-(0.5-1.4)*menu_height & mouseY<=height/3-(0.5-1.4)*menu_height+menu_height) {
     if(zvuk == 0){
       pozadinska_pjesma.play();
       zvuk = 1;
