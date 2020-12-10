@@ -24,7 +24,7 @@ void back_mousePressed() {
      status = izbornik;
      //if(ponovljena_pjesma != null) ponovljena_pjesma.close();
      //if (status != postavke)
-     pozadinska_pjesma.rewind();
+     pozadinska_pjesma.close();
        setup();
    }
 }
