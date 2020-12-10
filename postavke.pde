@@ -19,13 +19,13 @@ void postavke_setup() {
     */
     
     minim = new Minim(this);
-    pozadinska_pjesma = minim.loadFile("pjesme/Ariana Grande - Dangerous Woman.mp3");
-    pozadinska_pjesma.play();
-    if (pozadinska_pjesma.position() == pozadinska_pjesma.length()  && zvuk == 1)
-    {
-      pozadinska_pjesma.rewind();
-      pozadinska_pjesma.play();
-    }
+    //pozadinska_pjesma = minim.loadFile("Ariana Grande - Dangerous Woman.mp3");
+    pozadinska_pjesma = minim.loadFile("pjesme/Abba - Dancing Queen.mp3");
+
+    //pozadinska_pjesma.play();
+    
+    
+    
 
 }
 
@@ -53,24 +53,24 @@ void postavke_draw() {
    */
    //fill();
     
-    fill(pravokutnik_pozadina);
-    rect(width/4, height/3, width/2, height/7);
-    rect(width/4, 2*height/3, width/2, height/7);
+    fill(pravokutnik_pozadina, 180);
+    rect(width/2-menu_width/2, height/3-0.5*menu_height, menu_width, menu_height);
+    rect(width/2-menu_width/2, height/3-(0.5-2.4)*menu_height, menu_width, menu_height);
     fill(#282828);
     
     if (boja == 1) {
       
-      text("Tema: plavo", width/4+0.7*menu_width, height/3+0.5*menu_height);
+      text("Tema: plavo", width/2, height/3-0.07*menu_height);
       
     }
      else {
       
-      text("Tema: rozo", width/4+0.7*menu_width, height/3+0.5*menu_height);
+      text("Tema: rozo", width/2, height/3-0.07*menu_height);
      }
     if (zvuk == 1)
-      text("Zvuk: ON", width/4+0.7*menu_width, 2*height/3+0.5*menu_height);
+      text("Zvuk: ON",width/2, height/3+2.3*menu_height);
     else
-      text("Zvuk: OFF", width/4+0.7*menu_width, 2*height/3+0.5*menu_height);
+      text("Zvuk: OFF", width/2, height/3+2.3*menu_height);
 
     
     
@@ -91,13 +91,21 @@ void postavke_mousePressed(){
   
   
   if(mouseX>=width/4 & mouseX<=(width/4+width/2) & mouseY>=2*height/3 & mouseY<=(2*height/3+height/7)) {
-    if(zvuk == 1){
-      pozadinska_pjesma.pause();
-      zvuk = 0;
-    }
-    else {
+    if(zvuk == 0){
       pozadinska_pjesma.play();
       zvuk = 1;
+    }
+    /*
+     else if (pozadinska_pjesma.position() == pozadinska_pjesma.length()) {
+    
+      pozadinska_pjesma.rewind();
+      pozadinska_pjesma.play();
+    
+    }
+    */
+    else {
+      pozadinska_pjesma.pause();
+      zvuk = 0;
     }
   }
   

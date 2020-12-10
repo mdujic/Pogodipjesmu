@@ -45,10 +45,11 @@ int menu_width, menu_height;
 
 
 void setup(){
-  size(800, 600);
+  
+  //size(800, 600);
   pozadina_setup();
   postavke_setup();
-  
+  fullScreen();
   
   //font = loadFont("TimesNewRomanPSMT-32.vlw");  
   font = createFont("FascinateInline-Regular.ttf", 40);
@@ -96,6 +97,8 @@ void setup(){
 
 void draw(){  
   //image(img, 0, 0);
+  
+  
   pozadina_draw();
   textFont(font);
   switch (status){
@@ -144,12 +147,18 @@ void draw(){
     break;
   }  
   
+  back_draw();
+  
 }
 
 void mousePressed(){ 
   
+  
+  
   if(status == postavke)
     postavke_mousePressed();
+    
+    
   if(pokreni_tajmer == 1){   
     m = millis()-n;        //Treba ovako jer inače nakon odabira da se ponovno igra, nastavlja teći vrijeme od prve igre 
     pokreni_tajmer = 0;    //i onda iako igrač dobro pogodi neće dobiti bodove koje zaslužuje jer je isteklo više vremena
@@ -179,10 +188,12 @@ void mousePressed(){
       break;
     case pocetak:
       if( ( mouseX > width/3-menu_width/2 ) & ( mouseX < width/3-menu_width/2 + menu_width ) & ( mouseY > height/2 ) & ( mouseY < height/2 + menu_height ) ){      
-        status=pitanja;      
+        status=pitanja;  
+        if ( zvuk == 1 ) pozadinska_pjesma.pause();
       }      
       else if( ( mouseX > width/3-menu_width/2+1.1*menu_width ) & ( mouseX < width/3-menu_width/2+1.1*menu_width + menu_width ) & ( mouseY > height/2 ) & ( mouseY < height/2 + menu_height)){           
         status=pitanja1;      
+        if ( zvuk == 1 ) pozadinska_pjesma.pause();
       }
       break;
       
@@ -215,7 +226,14 @@ void mousePressed(){
       break;
   }   
 }
-
+/*
+void precrtaj(){
+  fill(#382FC1);
+  if(status == pitanja) nacrtaj_odgovore(0);
+  else nacrtaj_odgovore(1);
+  cekaj = 1;
+}
+*/
 void custom_delay(int delay)
 {
   int time = millis();
