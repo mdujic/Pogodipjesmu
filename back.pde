@@ -27,7 +27,8 @@ void back_mousePressed() {
      exit();
    else if (mouseX >= width-0.7*menu_width-1.3*menu_height & mouseX <= width-0.7*menu_width-1.3*menu_height + 0.7*menu_width && mouseY <= menu_height) {
      status = izbornik;
-     
+     if (pozadinska_pjesma.isPlaying() )
+       pozadinska_pjesma.pause();
      if ( song.get(indeks).isPlaying() ) {
        song.get(indeks).pause();
        song.get(indeks).close(); 
