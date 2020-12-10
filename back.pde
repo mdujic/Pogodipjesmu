@@ -1,5 +1,3 @@
-void back_setup()  {
-}
 
 
 void back_draw() {
@@ -12,6 +10,7 @@ void back_draw() {
   fill(boja_teksta);
   text("X", width-menu_height/2, menu_height/2);
   
+  //povratak
   if (status != izbornik) {
     fill(pravokutnik_pozadina, 180);
     rect(width-0.7*menu_width-1.3*menu_height, 0, 0.7*menu_width, menu_height);
@@ -28,9 +27,17 @@ void back_mousePressed() {
      exit();
    else if (mouseX >= width-0.7*menu_width-1.3*menu_height & mouseX <= width-0.7*menu_width-1.3*menu_height + 0.7*menu_width && mouseY <= menu_height) {
      status = izbornik;
-     //if(ponovljena_pjesma != null) ponovljena_pjesma.close();
-     //if (status != postavke)
-     pozadinska_pjesma.close();
-       setup();
+     //if (status == pjesme || status == izvodaci)
+     //{
+       //if ()song.get(indeks).pause();
+       //song.get(indeks).close();
+       //ponovljena_pjesma.pause();
+       //ponovljena_pjesma.close();
+       //minim.stop();
+     //}
+     setup();
+
+       
+     
    }
 }

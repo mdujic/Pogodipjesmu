@@ -43,7 +43,7 @@ void pitanja_draw()
     rect(x3, y3, 1.3*menu_width, menu_height);  // 3
     rect(x4, y4, 1.3*menu_width, menu_height);  // 4
     
-    fill(pravokutnik_pozadina);
+    fill(pravokutnik_pozadina, 180);
     rect(a, b, 1.3*menu_width, menu_height);
     fill(boja_teksta);
     textAlign(CENTER, CENTER);
