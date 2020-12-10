@@ -39,14 +39,14 @@ void pitanja_draw()
     text(" Pusti ponovo", 40, 425);*/
     
     noStroke();                                 // 1 2
-    fill(170, 210, 230, 200);                   // 3 4
+    fill(pravokutnik_pozadina, 200);            // 3 4
     
     rect(x1, y1, 1.3*menu_width, menu_height);  // 1
     rect(x2, y2, 1.3*menu_width, menu_height);  // 2
     rect(x3, y3, 1.3*menu_width, menu_height);  // 3
     rect(x4, y4, 1.3*menu_width, menu_height);  // 4
     
-    fill(170, 210, 230);
+    fill(pravokutnik_pozadina);
     rect(a, b, 1.3*menu_width, menu_height);
     fill(#282828);
     textAlign(CENTER, CENTER);

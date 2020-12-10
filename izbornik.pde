@@ -1,7 +1,7 @@
 void izbornik_draw(){
     noStroke();
     // fill(170, 210, 230, 220); -> mousePressed
-    fill(pravokutnik_pozadina);
+    fill(pravokutnik_pozadina, 180);
     
     
     rect(width/2-menu_width/2, height/3-0.5*menu_height, menu_width, menu_height);

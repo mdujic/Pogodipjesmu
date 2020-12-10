@@ -3,7 +3,7 @@
 //PShape plavi_krug, rozi_krug;
 int boja = 1; //plavo = 1, rozo = 0
 int zvuk = 1; // ON = 1, OFF = 0
-color pravokutnik_pozadina = color(170, 210, 230, 180); //defaultna je plava
+color pravokutnik_pozadina = color(170, 210, 230); //defaultna je plava
 AudioPlayer pozadinska_pjesma;
 
 void postavke_setup() {
