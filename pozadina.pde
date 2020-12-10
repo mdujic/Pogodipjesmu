@@ -29,7 +29,7 @@ void pozadina_draw() {
   
   background(boja_teksta);
  float rStep = 30;
- float rMax = 1920;
+ float rMax = 1.5*width;
  
  for(float r = 0; r < rMax; r+=rStep) {
    
