@@ -80,11 +80,11 @@ void postavke_mousePressed(){
   
   if(mouseX>=width/4 & mouseX<=(width/4+width/2) & mouseY>=height/3 & mouseY<=(height/3+height/7)) {
     if(boja == 1){
-      pravokutnik_pozadina = color(230, 180, 170, 180);
+      pravokutnik_pozadina = color(230, 180, 170);
       boja = 0;
     }
     else {
-      pravokutnik_pozadina = color(170, 210, 230, 180);
+      pravokutnik_pozadina = color(170, 210, 230);
       boja = 1;
     }
   }
