@@ -153,7 +153,7 @@ void draw(){
 
 void mousePressed(){ 
   
-  
+  back_mousePressed();
   
   if(status == postavke)
     postavke_mousePressed();
