@@ -216,6 +216,7 @@ void mousePressed(){
     case kraj:
       if(mousePressed == true & mouseX > width/2-menu_width/2 & mouseX < width/2 + menu_width & mouseY > 0.65*height & mouseY < 0.65*height + menu_height) 
       {
+        //if ( zvuk == 1 ) pozadinska_pjesma.play();
         setup();
         status = pocetak;
       }

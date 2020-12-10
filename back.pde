@@ -22,6 +22,8 @@ void back_draw() {
 void back_mousePressed() {
    if (mouseX >= width-menu_width && mouseX <= width && mouseY <= menu_height) {
      status = 4;
-     setup();
+     //if(ponovljena_pjesma != null) ponovljena_pjesma.close();
+     if (status != 5)
+       setup();
    }
 }
