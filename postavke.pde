@@ -6,6 +6,44 @@ color tocan_odgovor, netocan_odgovor;
 color boja_teksta;
 AudioPlayer pozadinska_pjesma;
 
+void igra_setup()
+{
+  odgovori = loadStrings("odgovori.txt");
+  song = new ArrayList();
+  indeksi = new int [3];
+  tocni_odgovori = new String [5];
+  ponudeni_odgovori = new String[4];
+  rand_indeks = new int[4];
+  indeks = 0;
+ 
+  bodovi = 0;
+  ne_mijenjaj_indeks = 0;
+  pokreni_tajmer = 1;
+  cekaj = 0;
+  
+  for(int i=0; i<5; i++){ 
+    test=1;
+    while(test==1) //Ovdje je dodana while i for petlja, da se nijedno od tih pjesama ne ponovi
+    {              //To olakšava igru jer igrač može naučiti koja je pjesma/izvođač tokom igre 
+      rand = int(random(0,22)); //i onda sljedeći put točno odgovorit iako nije znao prije početka igre
+      test=0;
+      for(int j=0; j<i; j++)
+      {
+        if(tocni_odgovori[j]==odgovori[rand])
+        {
+          test=1;
+          break;
+        }
+      }
+    }
+    minim = new Minim(this);
+    song.add(minim.loadFile("pjesme/" +odgovori[rand] + ".mp3"));
+    tocni_odgovori[i] = odgovori[rand];
+  }  
+  n=millis(); //Ovo je dodano
+  
+}
+
 void postavke_setup() {
     
     minim = new Minim(this);

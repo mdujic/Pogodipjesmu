@@ -26,21 +26,26 @@ void back_mousePressed() {
    if( mouseX >= width-menu_height & mouseX < width & mouseY>0 & mouseY <= menu_height)
      exit();
    else if (mouseX >= width-0.7*menu_width-1.3*menu_height & mouseX <= width-0.7*menu_width-1.3*menu_height + 0.7*menu_width && mouseY <= menu_height) {
-     status = izbornik;
-     if (pozadinska_pjesma.isPlaying() )
-       pozadinska_pjesma.pause();
+  
+     //if (pozadinska_pjesma.isPlaying() )
+       //pozadinska_pjesma.pause();
+     if ( indeks < 5 )
+     {
      if ( song.get(indeks).isPlaying() ) {
        song.get(indeks).pause();
        song.get(indeks).close(); 
     
      }
+   }
      
      if (ponovljena_pjesma != null)
        if ( ponovljena_pjesma.isPlaying() ) {
          ponovljena_pjesma.pause();
          ponovljena_pjesma.close();
      }
-     setup(); 
+     igra_setup(); 
+     if( status == pjesme  || status == izvodaci ) pozadinska_pjesma.play();
+     status = izbornik;
    }
    
 }

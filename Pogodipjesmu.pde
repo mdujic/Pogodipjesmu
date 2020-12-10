@@ -58,46 +58,12 @@ void setup(){
   font = createFont("FascinateInline-Regular.ttf", fontSizeNormal);
   font2 = createFont("BubblegumSans-Regular.ttf", fontSizeSmall); // za odgovore
   
-  
-  //img = loadImage("slika.jpg");
-  odgovori = loadStrings("odgovori.txt");
-  song = new ArrayList();
-  indeksi = new int [3];
-  tocni_odgovori = new String [5];
-  ponudeni_odgovori = new String[4];
-  rand_indeks = new int[4];
-  indeks = 0;
-  status = izbornik;
-  bodovi = 0;
-  ne_mijenjaj_indeks = 0;
-  pokreni_tajmer = 1;
-  cekaj = 0;
-  
   //veličine tipki:
   menu_height = height/8;
   menu_width = width/3;
-  
-  for(int i=0; i<5; i++){ 
-    test=1;
-    while(test==1) //Ovdje je dodana while i for petlja, da se nijedno od tih pjesama ne ponovi
-    {              //To olakšava igru jer igrač može naučiti koja je pjesma/izvođač tokom igre 
-      rand = int(random(0,22)); //i onda sljedeći put točno odgovorit iako nije znao prije početka igre
-      test=0;
-      for(int j=0; j<i; j++)
-      {
-        if(tocni_odgovori[j]==odgovori[rand])
-        {
-          test=1;
-          break;
-        }
-      }
-    }
-    minim = new Minim(this);
-    song.add(minim.loadFile("pjesme/" +odgovori[rand] + ".mp3"));
-    tocni_odgovori[i] = odgovori[rand];
-  }  
-  n=millis(); //Ovo je dodano
-  
+   status = izbornik;
+   minim = new Minim(this);
+  igra_setup();
 }
 
 void draw(){  
@@ -142,6 +108,8 @@ void draw(){
     break;
     
   case rezultati:
+    //if(zvuk == 1) 
+    //{ pozadinska_pjesma.rewind(); pozadinska_pjesma.play(); }
     rezultati_draw();
     break;
   }
@@ -203,7 +171,9 @@ void mousePressed(){
       if(ne_mijenjaj_indeks == 0){         
         indeks++;         
       }
-      if(indeks == 5) status = kraj;
+      if(indeks == 5) { 
+        status = kraj;
+        if( zvuk == 1) pozadinska_pjesma.play(); }
       break;
       
     case izvodaci:
