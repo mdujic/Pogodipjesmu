@@ -41,8 +41,8 @@ void postavke_draw() {
 
 void postavke_mousePressed(){   
   
-  if(mouseX>=width/4 & mouseX<=(width/4+width/2) & mouseY>=height/3 & mouseY<=(height/3+height/7)) {
-    if(boja == 1){
+  if(mouseX>=width/2-menu_width/2 & mouseX<=(width/2-menu_width/2 + menu_width) & mouseY>=height/3-(0.5-1.4)*menu_height & mouseY<=(height/3-(0.5-1.4)*menu_height + menu_height)) {
+      if(boja == 1){
       pravokutnik_pozadina = color(230, 180, 170);
       boja = 0;
     }
