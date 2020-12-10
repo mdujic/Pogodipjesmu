@@ -151,7 +151,6 @@ void draw(){
 
 void mousePressed(){ 
   
-  back_mousePressed();
   
   if(status == postavke)
     postavke_mousePressed();
@@ -227,6 +226,10 @@ void mousePressed(){
       }
       break;
   }   
+  
+  
+    back_mousePressed();
+
 }
 
 void custom_delay(int delay)

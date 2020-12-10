@@ -28,14 +28,18 @@ void back_mousePressed() {
    else if (mouseX >= width-0.7*menu_width-1.3*menu_height & mouseX <= width-0.7*menu_width-1.3*menu_height + 0.7*menu_width && mouseY <= menu_height) {
      status = izbornik;
      
-     song.get(indeks).pause();
-     song.get(indeks).close();
-     ponovljena_pjesma.pause();
-     ponovljena_pjesma.close();
-      
-     setup();
-
-       
+     if ( song.get(indeks).isPlaying() ) {
+       song.get(indeks).pause();
+       song.get(indeks).close(); 
+    
+     }
      
+     if (ponovljena_pjesma != null)
+       if ( ponovljena_pjesma.isPlaying() ) {
+         ponovljena_pjesma.pause();
+         ponovljena_pjesma.close();
+     }
+     setup(); 
    }
+   
 }
