@@ -19,10 +19,10 @@ void postavke_setup() {
     */
     
     minim = new Minim(this);
-    //pozadinska_pjesma = minim.loadFile("Ariana Grande - Dangerous Woman.mp3");
-    pozadinska_pjesma = minim.loadFile("pjesme/Abba - Dancing Queen.mp3");
+    pozadinska_pjesma = minim.loadFile("Ariana Grande - Dangerous Woman.mp3");
+    //pozadinska_pjesma = minim.loadFile("pjesme/Abba - Dancing Queen.mp3");
 
-    //pozadinska_pjesma.play();
+    pozadinska_pjesma.play();
     
     
     
