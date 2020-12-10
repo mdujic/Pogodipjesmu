@@ -214,7 +214,11 @@ void mousePressed(){
       break;
       
     case kraj:
-      if(mousePressed == true & mouseX>100 & mouseX<250 & mouseY>300 & mouseY<340) setup();
+      if(mousePressed == true & mouseX > width/2-menu_width/2 & mouseX < width/2 + menu_width & mouseY > 0.65*height & mouseY < 0.65*height + menu_height) 
+      {
+        setup();
+        status = pocetak;
+      }
       break;
   }   
 }
