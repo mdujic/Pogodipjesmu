@@ -135,15 +135,7 @@ void draw(){
     
   case kraj:
     custom_delay(1200);
-    textSize(48);
-    text("Osvojeni bodovi:", 100, 200);
-    if(bodovi - (int)m/2000 < 0) text(0, 465, 200); 
-    else text(bodovi - (int)m/2000, 465, 200);
-    fill(#D3BABA);    
-    rect(100, 300, 150, 40);
-    fill(#382FC1); 
-    textSize(20);
-    text(" Igraj ponovo", 120, 325);
+    kraj_draw();
     break;
   }  
   
