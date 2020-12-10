@@ -14,6 +14,6 @@ void kraj_draw()
     fill(pravokutnik_pozadina, 180);    
     rect(width/2-menu_width/2, 0.65*height, menu_width, menu_height);
     fill(#282828);
-    textSize(30);    
+    textSize(fontSizeSmall);    
     text(" Igraj ponovo", width/2, 0.7*height);
 }

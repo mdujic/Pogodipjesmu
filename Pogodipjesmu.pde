@@ -40,6 +40,7 @@ int n; //dodano
 
 //dodano:
 int menu_width, menu_height;
+float fontSizeNormal, fontSizeSmall;
 
 
 
@@ -51,8 +52,11 @@ void setup(){
   postavke_setup();
   fullScreen();
   
-  //font = loadFont("TimesNewRomanPSMT-32.vlw");  
-  font = createFont("FascinateInline-Regular.ttf", 40);
+  
+  fontSizeNormal = height/15;
+  fontSizeSmall = height/20;
+  font = createFont("FascinateInline-Regular.ttf", fontSizeNormal);
+  
   
   //img = loadImage("slika.jpg");
   odgovori = loadStrings("odgovori.txt");

@@ -6,7 +6,7 @@ float y1, y2, y3, y4;
 float a, b;
 
 void pitanja_setup(){
-  font2 = createFont("BubblegumSans-Regular.ttf", 40);
+  font2 = createFont("BubblegumSans-Regular.ttf", fontSizeSmall);
   
   x1 = width/4-1.3*menu_width/2;
   y1 = height/3;
@@ -69,7 +69,7 @@ void nacrtaj_odgovore(int i){
     
     fill(#282828);
     textAlign(CENTER, CENTER);
-    textSize(17);     
+    //textSize(fontSizeSmall);     
     textFont(font2);
     
 
