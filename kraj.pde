@@ -15,5 +15,5 @@ void kraj_draw()
     rect(width/2-menu_width/2, 0.65*height, menu_width, menu_height);
     fill(boja_teksta);
     textSize(fontSizeSmall);    
-    text(" Igraj ponovo", width/2, 0.7*height);
+    text(" Igraj ponovno!", width/2, 0.7*height);
 }
