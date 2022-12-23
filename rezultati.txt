@@ -1,3 +1,5 @@
+Mateo,105
+Mateo,75
 Mateo,75
 Mateo,30
 Mateo,30
@@ -6,5 +8,3 @@ Mateo,30
 Mateo,15
 Mateo,15
 Mateo,15
-Mateo,0
-Mateo,0
