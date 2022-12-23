@@ -17,6 +17,7 @@ int rand;
 int rand_odgovor;
 
 // Zastavice:
+final int unos_imena = -1;
 final int izbornik = 0; 
 final int pocetak = 1;
 final int pjesme = 2;
@@ -40,6 +41,7 @@ int pokreni_tajmer;
 int cekaj;
 int test;
 int n; 
+String ime;
 
 //dodano:
 int menu_width, menu_height;
@@ -48,6 +50,7 @@ float fontSizeNormal, fontSizeSmall;
 void setup(){
   
   //size(800, 600);
+  unos_imena_setup();
   pozadina_setup();
   postavke_setup();
   fullScreen();
@@ -61,16 +64,21 @@ void setup(){
   //veličine tipki:
   menu_height = height/8;
   menu_width = width/3;
-   status = izbornik;
+   status = unos_imena;
    minim = new Minim(this);
   igra_setup();
 }
+
 
 void draw(){  
   
   pozadina_draw();
   textFont(font);
   switch (status){
+  
+  case unos_imena:
+    unos_imena_draw();
+    break;
    
   case izbornik: //izbornik
     izbornik_draw();
@@ -173,6 +181,7 @@ void mousePressed(){
       }
       if(indeks == 5) { 
         status = kraj;
+        azuriraj_rezultate();
         if( zvuk == 1) pozadinska_pjesma.play(); }
       break;
       
@@ -187,6 +196,7 @@ void mousePressed(){
       }     
       if(indeks == 5) { 
         status = kraj;
+        azuriraj_rezultate();
         if( zvuk == 1) pozadinska_pjesma.play(); }
       break;
       
@@ -202,6 +212,13 @@ void mousePressed(){
   
     back_mousePressed();
 
+}
+
+// ako se pritisne enter i u tijeku je unos imena, također se sprema ime i prelazi na izbornik
+void keyPressed(){
+  if ( status == unos_imena & key == ENTER ) {
+    status = izbornik;
+  }
 }
 
 void custom_delay(int delay)
@@ -269,4 +286,55 @@ void generiraj_odgovore(int i){
       }
     }
     nacrtaj_odgovore(i);
+}
+
+void azuriraj_rezultate(){
+  // otvori rezultati.txt
+  // ako se rezultat nalazi unutar 10 najboljih, stavi ga na odgovarajuće mjesto i spremi preostalih 10 najboljih
+
+  String lines[] = loadStrings("rezultati.txt");
+  String[] rezultati = new String[10];
+
+  for (int i = 0; i < 10; i++)
+    rezultati[i] = "NoName,0";
+
+
+  if (lines[0] == "NoName,0")
+  {
+    rezultati[0] = ime + "," + bodovi;
+    return;
+  }
+
+  for(int i = 0; i < 10; i++){
+    // razdvoji lines[i] na ime i rezultat
+    // ako je bodovi > rezultat, zamjena
+
+    if (lines[i] == "NoName,0")
+    {
+      rezultati[i] = ime + "," + bodovi;
+      break;
+    }
+
+    String[] d = lines[i].split(",");
+    String ime_r = d[0];
+    int bodovi_r = int(d[1]);
+
+    if ( bodovi >= bodovi_r ) {
+      String temp = lines[i];
+      rezultati[i] = ime + "," + bodovi;
+      
+      // mijenjamo do kraja (ako je bilo manje od 10 rezultata, spremamo i najgori)
+      for (int j = i; j < 9; j++) {
+        String temp2 = lines[j];
+        rezultati[j + 1] = temp;
+        temp = temp2;
+      }
+      break;
+    }
+
+    rezultati[i] = lines[i];
+
+  }
+  
+  saveStrings("rezultati.txt", rezultati);
 }

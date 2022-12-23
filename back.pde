@@ -11,7 +11,7 @@ void back_draw() {
   text("X", width-menu_height/2, menu_height/2);
   
   //povratak
-  if (status != izbornik) {
+  if (status != izbornik & status != unos_imena) {
     fill(pravokutnik_pozadina, 180);
     rect(width-0.7*menu_width-1.3*menu_height, 0, 0.7*menu_width, menu_height);
     fill(boja_teksta);
@@ -19,6 +19,17 @@ void back_draw() {
     text("Povratak", width-0.625*menu_width, 0.5*menu_height);
     
   }
+
+  // Igrač: ime
+  if (status != unos_imena)
+  {
+    fill(pravokutnik_pozadina, 180);
+    rect(0, 0, width*0.4, menu_height);
+    fill(boja_teksta);
+    textFont(font);
+    text("Igrač: " + ime, 0.6*menu_width, 0.5*menu_height);
+  }
+
 }
 
 
