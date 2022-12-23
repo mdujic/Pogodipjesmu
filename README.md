@@ -1,5 +1,5 @@
 # Pogodi pjesmu
-MMS 2020, izmjena projekta
+MMS 2022, nastavak projekta
 
 Potrebno je instalirati sljedeće biblioteke u Processingu (Tools > Manage Tools... > Libraries):
 - Minim
