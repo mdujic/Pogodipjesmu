@@ -1,7 +1,7 @@
 # Pogodi pjesmu
 MMS 2020, izmjena projekta
 
-Potrebno je instalirati sljedeće biblioteke u Processingu:
+Potrebno je instalirati sljedeće biblioteke u Processingu (Tools > Manage Tools... > Libraries):
 - Minim
 - ControlP5
 <br />
