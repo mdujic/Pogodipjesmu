@@ -104,7 +104,8 @@ void pitanja_if(){
     
     if(rand_indeks[0]==1 & ne_mijenjaj_indeks == 0){
       if( ( mouseX >=x1 ) & ( mouseX <= x1 + 1.3*menu_width ) & ( mouseY >= y1 ) & ( mouseY <= y1 + menu_height ) ){
-        bodovi = bodovi + 15;        
+        bodovi = bodovi + 15;
+        broj_tocnih++;       
       }   
       zacrveni(); //dodano
       fill(tocan_odgovor);
@@ -113,7 +114,8 @@ void pitanja_if(){
     }
     if(rand_indeks[0]==2 & ne_mijenjaj_indeks == 0){
       if( ( mouseX >= x2 ) & ( mouseX <= x2 + 1.3*menu_width ) & ( mouseY >= y2 ) & ( mouseY <= y2 + menu_height ) ){
-        bodovi = bodovi + 15;        
+        bodovi = bodovi + 15;
+        broj_tocnih++;   
       }
       zacrveni(); //dodano
       fill(tocan_odgovor);
@@ -122,7 +124,8 @@ void pitanja_if(){
     }
     if(rand_indeks[0]==3 & ne_mijenjaj_indeks == 0){
       if( ( mouseX >= x3 ) & ( mouseX <= x3 + 1.3*menu_width ) & ( mouseY >= y3 ) & ( mouseY <= y3 + menu_height ) ){
-        bodovi = bodovi + 15;        
+        bodovi = bodovi + 15;  
+        broj_tocnih++;      
       }
       zacrveni(); //dodano
       fill(tocan_odgovor);
@@ -131,7 +134,8 @@ void pitanja_if(){
     }
     if(rand_indeks[0]==4 & ne_mijenjaj_indeks == 0){
       if( ( mouseX >= x4 ) & ( mouseX <= x4 + 1.3*menu_width ) & ( mouseY >= y4 ) & ( mouseY <= y4 + menu_height ) ){
-        bodovi = bodovi + 15;        
+        bodovi = bodovi + 15;
+        broj_tocnih++;        
       }
       zacrveni(); //dodano
       fill(tocan_odgovor);

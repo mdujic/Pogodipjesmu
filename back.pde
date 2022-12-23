@@ -30,6 +30,16 @@ void back_draw() {
     text("Igrač: " + ime, 0.6*menu_width, 0.5*menu_height);
   }
 
+  // nacrtaj broj_tocnih/ukupno i bodove
+  if (status == pjesme || status == izvodaci)
+  {
+    fill(pravokutnik_pozadina, 180);
+    rect(width*0.4, height - menu_height, width*0.6, menu_height);
+    fill(boja_teksta);
+    textFont(font);
+    text("Točno: " + broj_tocnih + "/" + ukupno + "  Bodovi: " + bodovi, width - menu_width, height - 0.5*menu_height);
+  }
+
 }
 
 
@@ -40,7 +50,7 @@ void back_mousePressed() {
   
      //if (pozadinska_pjesma.isPlaying() )
        //pozadinska_pjesma.pause();
-     if ( indeks < 5 )
+     if ( indeks < ukupno )
      {
      if ( song.get(indeks).isPlaying() ) {
        song.get(indeks).pause();

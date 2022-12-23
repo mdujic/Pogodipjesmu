@@ -35,6 +35,8 @@ String[] ponudeni_odgovori;
 int[] rand_indeks;
 int izabrao_indekse;
 int bodovi;
+int broj_tocnih;
+int ukupno = 5;
 int ne_mijenjaj_indeks;
 int m;
 int pokreni_tajmer;
@@ -179,7 +181,7 @@ void mousePressed(){
       if(ne_mijenjaj_indeks == 0){         
         indeks++;         
       }
-      if(indeks == 5) { 
+      if(indeks == ukupno) { 
         status = kraj;
         azuriraj_rezultate();
         if( zvuk == 1) pozadinska_pjesma.play(); }
@@ -194,7 +196,7 @@ void mousePressed(){
       if(ne_mijenjaj_indeks == 0){ 
         indeks++;         
       }     
-      if(indeks == 5) { 
+      if(indeks == ukupno) { 
         status = kraj;
         azuriraj_rezultate();
         if( zvuk == 1) pozadinska_pjesma.play(); }
