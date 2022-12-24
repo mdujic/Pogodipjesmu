@@ -1,10 +1,10 @@
+mirna,105
+mirna,105
+mirna,105
 Mateo,105
+Mateo,105
+mirna,75
 Mateo,75
 Mateo,75
-Mateo,30
-Mateo,30
-Mateo,30
-Mateo,30
-Mateo,15
-Mateo,15
-Mateo,15
+Mateo,75
+mirna,60
