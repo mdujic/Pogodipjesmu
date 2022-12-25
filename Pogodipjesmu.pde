@@ -4,8 +4,10 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
+import gifAnimation.*;
 
 Minim minim;
+Gif vatromet;
 
 PFont font, font2;
 
@@ -44,6 +46,8 @@ int cekaj;
 int test;
 int n; 
 String ime;
+boolean cestitam;
+boolean crtaj_vatromet;
 
 //dodano:
 int menu_width, menu_height;
@@ -55,6 +59,7 @@ void setup(){
   unos_imena_setup();
   pozadina_setup();
   postavke_setup();
+  efekti_setup();
   fullScreen();
   
   // font setup:
@@ -203,10 +208,11 @@ void mousePressed(){
       break;
       
     case kraj:
-      if(mousePressed == true & mouseX > width/2-menu_width/2 & mouseX < width/2 + menu_width & mouseY > 0.65*height & mouseY < 0.65*height + menu_height) 
+      if(mousePressed == true & mouseX > width/2-menu_width/2 & mouseX < width/2 + menu_width & mouseY > 0.8*height & mouseY < 0.8*height + menu_height) 
       {
         igra_setup();
         broj_tocnih = 0;  // bez ove linije se tijekom igre prikazivao ukupan broj pogodenih pjesama iz *svih* igara u trenutnom sessionu
+        cestitam = false;
         status = pocetak;
       }
       break;
@@ -323,6 +329,9 @@ void azuriraj_rezultate(){
     int bodovi_r = int(d[1]);
 
     if ( bodovi >= bodovi_r ) {
+      cestitam = true;
+      crtaj_vatromet = true;
+      
       String temp = lines[i];
       rezultati[i] = ime + "," + bodovi;
       
