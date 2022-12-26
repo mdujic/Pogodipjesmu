@@ -18,6 +18,6 @@ void kraj_draw()
     text(" Igraj ponovno!", width/2, 0.85*height);
     
     if(cestitam) {
-      vatromet_draw();
+        vatromet_draw();
     }
 }

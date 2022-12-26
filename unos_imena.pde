@@ -3,19 +3,19 @@ import controlP5.*;
 ControlP5 cp5;
 
 void unos_imena_setup() {
-  PFont font = createFont("arial",20);
+    PFont font = createFont("arial",20);
 
-  cp5 = new ControlP5(this);
+    cp5 = new ControlP5(this);
 
-  cp5.addTextfield("")
-    .setPosition(width*0.35,height*0.45)
-    .setSize(600,50)
-    .setFont(font)
-    .setFocus(true)
-    .setColor(color(255,0,0))
-    ;
+    cp5.addTextfield("")
+        .setPosition(width*0.35,height*0.45)
+        .setSize(600,50)
+        .setFont(font)
+        .setFocus(true)
+        .setColor(color(255,0,0))
+        ;
 
-  textFont(font);
+    textFont(font);
 }
 
 void unos_imena_draw() {
@@ -31,12 +31,12 @@ void unos_imena_draw() {
 
 
 void controlEvent(ControlEvent theEvent) {
-  if(theEvent.isAssignableFrom(Textfield.class)) {
-    println("controlEvent: accessing a string from controller '"
-            +theEvent.getName()+"': "
-            +theEvent.getStringValue()
-            );
-    ime = theEvent.getStringValue();
-    cp5.remove("");
-  }
+    if(theEvent.isAssignableFrom(Textfield.class)) {
+        println("controlEvent: accessing a string from controller '"
+                +theEvent.getName()+"': "
+                +theEvent.getStringValue()
+                );
+        ime = theEvent.getStringValue();
+        cp5.remove("");
+    }
 }
