@@ -4,11 +4,10 @@ MMS 2022, nastavak projekta
 Potrebno je instalirati sljedeće biblioteke u Processingu (Tools > Manage Tools... > Libraries):
 - Minim
 - ControlP5
+- GifAnimation
 <br />
 Pokretanje: upaliti Pogodipjesmu.pde
 
 Za iduće faze poboljšanja predlažemo:
 - dodati opciju da više ljudi igra odjednom, tj. da igrači naizmjenično pogađaju pjesme i da se na kraju naznači pobjednik
-- dodati još zvučnih efekata, npr. kad igrač pogađa pjesme da se čuje određeni zvuk ovisno o tome je li njegov odgovor točan ili ne
-- dodati vizualni efekti kada korisnik točno odgovori ili postigne novi high score (na primjer vatromet)
 - dodati da tipke na koje korisnik dođe mišem promijene opacity da je tako vidljivo da su to tipke, a ne samo dio dizajna

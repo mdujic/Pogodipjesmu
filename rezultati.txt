@@ -7,4 +7,4 @@ mirna,120
 mirna,120
 mirna,105
 mirna,105
-mirna,15
+mirna,90
