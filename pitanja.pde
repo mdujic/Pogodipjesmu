@@ -104,6 +104,7 @@ void pitanja_if(){
     
     if(rand_indeks[0]==1 & ne_mijenjaj_indeks == 0){
       if( ( mouseX >=x1 ) & ( mouseX <= x1 + 1.3*menu_width ) & ( mouseY >= y1 ) & ( mouseY <= y1 + menu_height ) ){
+        tocno_play();
         bodovi = bodovi + 15;
         broj_tocnih++;       
       }   
@@ -114,6 +115,7 @@ void pitanja_if(){
     }
     if(rand_indeks[0]==2 & ne_mijenjaj_indeks == 0){
       if( ( mouseX >= x2 ) & ( mouseX <= x2 + 1.3*menu_width ) & ( mouseY >= y2 ) & ( mouseY <= y2 + menu_height ) ){
+        tocno_play();
         bodovi = bodovi + 15;
         broj_tocnih++;   
       }
@@ -124,6 +126,7 @@ void pitanja_if(){
     }
     if(rand_indeks[0]==3 & ne_mijenjaj_indeks == 0){
       if( ( mouseX >= x3 ) & ( mouseX <= x3 + 1.3*menu_width ) & ( mouseY >= y3 ) & ( mouseY <= y3 + menu_height ) ){
+        tocno_play();
         bodovi = bodovi + 15;  
         broj_tocnih++;      
       }
@@ -134,6 +137,7 @@ void pitanja_if(){
     }
     if(rand_indeks[0]==4 & ne_mijenjaj_indeks == 0){
       if( ( mouseX >= x4 ) & ( mouseX <= x4 + 1.3*menu_width ) & ( mouseY >= y4 ) & ( mouseY <= y4 + menu_height ) ){
+        tocno_play();
         bodovi = bodovi + 15;
         broj_tocnih++;        
       }
@@ -148,18 +152,22 @@ void pitanja_if(){
 void zacrveni() //Dodano da se igrač lakše snađe što je krivo stisnuo
 {
   if( mouseX >= x1 & mouseX <= x1 + 1.3*menu_width & mouseY >= y1 & mouseY <= y1 + menu_height ){
+        netocno_play();
         fill(netocan_odgovor);
         rect(x1, y1, 1.3*menu_width, menu_height);   
       }
   if( mouseX >= x2 & mouseX <= x2 + 1.3*menu_width & mouseY >= y2 & mouseY <= y2 + menu_height ){
+        netocno_play();
         fill(netocan_odgovor);
         rect(x2, y2, 1.3*menu_width, menu_height);   
       }
   if( mouseX >= x3 & mouseX <= x3 + 1.3*menu_width & mouseY >= y3 & mouseY <= y3 + menu_height ){
+        netocno_play();
         fill(netocan_odgovor);
         rect(x3, y3, 1.3*menu_width, menu_height);     
       }
   if( mouseX >= x4 & mouseX <= x4 + 1.3*menu_width & mouseY >= y4 & mouseY <= y4 + menu_height ){
+        netocno_play();
         fill(netocan_odgovor);
         rect(x4, y4, 1.3*menu_width, menu_height);     
       }

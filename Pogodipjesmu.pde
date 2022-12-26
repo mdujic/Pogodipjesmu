@@ -13,6 +13,8 @@ PFont font, font2;
 
 ArrayList<AudioPlayer> song;
 AudioPlayer ponovljena_pjesma;
+AudioPlayer tocno;
+AudioPlayer netocno;
 int[] indeksi;
 int indeks;
 int rand;

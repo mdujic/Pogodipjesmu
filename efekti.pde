@@ -21,3 +21,15 @@ void vatromet_draw() {  // nazalost cini se da se prikazuje samo jedan frame od 
     crtaj_vatromet = false;
   }
 }
+
+void tocno_play() {
+  minim = new Minim(this);
+  tocno = minim.loadFile("correct.wav");
+  tocno.play();
+}
+
+void netocno_play() {
+  minim = new Minim(this);
+  netocno = minim.loadFile("incorrect.mp3");
+  netocno.play();
+}
