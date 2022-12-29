@@ -9,5 +9,7 @@ Potrebno je instalirati sljedeće biblioteke u Processingu (Tools > Manage Tools
 Pokretanje: upaliti Pogodipjesmu.pde
 
 Za iduće faze poboljšanja predlažemo:
-- dodati opciju da više ljudi igra odjednom, tj. da igrači naizmjenično pogađaju pjesme i da se na kraju naznači pobjednik
-- dodati da tipke na koje korisnik dođe mišem promijene opacity da je tako vidljivo da su to tipke, a ne samo dio dizajna
+- dostupnost pjesama na Cloudu; dodavanjem pjesama aplikacija postaje sve više memorijski zahtjevna
+- dodavanje više različitih težina: Lagano, Srednje, Teško
+- dodavanje još različitih pjesama
+- prilagoditi ljestvicu top 10 rezultata da se gleda broj točnih odgovora u odnosu na ukupni broj pitanja u kvizu (naime, trenutno igrač koji pogodi 5 od 8 pitanja dobiva iste bodove kao da je pogodio 5 od 5)
